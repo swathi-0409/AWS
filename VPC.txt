@@ -1,0 +1,30 @@
+
+To improve resiliency deploy the servers in two Availability Zones,By using an Auto Scaling group and an Application Load Balancer.
+.For additional security deploy the servers in private subnets. The servers receive requests through the load balancer. the servers can connect to the internet by using a NAT gateway To improve resiliency, you deploy the NAT gateway in both Availability Zones.
+
+The servers run in the private subnets, are launched and terminated by using an Auto Scaling group, and receive traffic from the load balancer.
+
+the servers can connect to the internet by using the NAT gateway
+
+
+
+
+
+
+
+
+IN THESE WE ATRER USING SERVERS IN TWO Availability Zones because of if any one server some reason data center of aws  goes down we still have another availability zone that's the reason using two subnets
+
+
+why need NAT gateway if suppose need any access from internet in private subnet its better mass the Ip address of these application
+
+NAT gateway says if you want access from internet let me change your IP address to public IP address of mine then your information was hidden
+
+
+autoscaling :if i want deploye the application in two availability zones instated of creating ec2 instances two times we the autoscaling group create the minimum of 2 replicas in case if application receives  more requests two servers are not enough to accept the traffic create automatic instance
+
+load balancer: if we get 100 requests load balancer take the responsibility to send the request 50 one instances and 50 another instances if in case one instance is powerful send the request in 80 one instance and 20 another instance
+
+Bastin Host or jump Server: the ec2 instances we created in private subnet they dont have public ip address but created bastin host to jump in the public subnets
+
+
